@@ -29,9 +29,3 @@ Utilizing secure JWT authentication to ensure user privacy and data integrity, i
 - React.js
 - Node.js
 - Chart.js
-
-3. **Start the Client**:
-   - Run `npm start` to start the client-side application.
-
-4. **Access the Application**:
-   - Visit `http://localhost:3000` in your web browser to access the application.
