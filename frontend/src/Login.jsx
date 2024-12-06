@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/user/login", {
+      const res = await fetch("https://finance-tracker-eqoj.onrender.com/user/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },

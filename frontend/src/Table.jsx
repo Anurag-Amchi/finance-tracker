@@ -138,7 +138,7 @@ export default function Table(props) {
         const { newData, index } = e;
         _transactions[index] = newData;
         try{
-            const response = await fetch(`/txns/${newData._id}`, {
+            const response = await fetch(`https://finance-tracker-eqoj.onrender.com/txns/${newData._id}`, {
                 method: "PUT",
                 headers: {
                 "Content-Type": "application/json",
@@ -165,7 +165,7 @@ export default function Table(props) {
         const filteredTransactions = transactions.filter((transaction) => transaction.title !== rowData.title);
         setTransactions(filteredTransactions);
         try {
-            const response = await fetch(`/txns/${rowData._id}`, {
+            const response = await fetch(`https://finance-tracker-eqoj.onrender.com/txns/${rowData._id}`, {
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json"

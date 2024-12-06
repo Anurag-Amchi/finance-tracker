@@ -11,7 +11,7 @@ function Incomes() {
         setIsLoading(true);
         const loadInit = async () => {
           try {
-            const res = await fetch("/txns?type=INCOME", {
+            const res = await fetch("https://finance-tracker-eqoj.onrender.com/txns?type=INCOME", {
               method: "GET",
               headers: { "Content-Type": "application/json" },
             });

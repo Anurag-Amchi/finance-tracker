@@ -19,7 +19,7 @@ const MySidebar = () => {
   const saveLimit = async () => {
     setSubmitted(true);
     if(val > 0){
-      const res = await fetch("/user/setLimit", {
+      const res = await fetch("https://finance-tracker-eqoj.onrender.com/user/setLimit", {
         method: "PATCH",
         body: JSON.stringify({limit : val}),
         headers: { "Content-Type": "application/json" },

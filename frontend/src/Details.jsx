@@ -11,7 +11,7 @@ function Details() {
         setIsLoading(true);
         const loadInit = async () => {
           try {
-            const res = await fetch("/txns", {
+            const res = await fetch("https://finance-tracker-eqoj.onrender.com/txns", {
               method: "GET",
               headers: { "Content-Type": "application/json" },
             });

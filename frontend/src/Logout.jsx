@@ -15,7 +15,7 @@ const LogoutButton = () => {
       className="p-button-outlined p-button-secondary"
       onClick={async () => {
         try {
-          const response = await fetch("/logout", {
+          const response = await fetch("https://finance-tracker-eqoj.onrender.com/logout", {
             method: "GET",
           });
           if (!response.ok) {

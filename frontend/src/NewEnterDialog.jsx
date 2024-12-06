@@ -34,7 +34,7 @@ const NewEnterDialog = (props) => {
             let _transaction = { ...transaction };
             console.log(_transaction)
             try {
-                const res = await fetch("/txns/", {
+                const res = await fetch("https://finance-tracker-eqoj.onrender.com/txns/", {
                   method: "POST",
                   body: JSON.stringify(_transaction),
                   headers: { "Content-Type": "application/json" },

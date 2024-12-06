@@ -19,7 +19,7 @@ const Signup = () => {
       toast.current.show({severity:'error', summary: 'Error !', detail:"Password and confirm password must match !", life: 1000});
     } else {
       try {
-        const res = await fetch("/user/signup", {
+        const res = await fetch("https://finance-tracker-eqoj.onrender.com/user/signup", {
           method: "POST",
           body: JSON.stringify({ name, email, password }),
           headers: { "Content-Type": "application/json" },
