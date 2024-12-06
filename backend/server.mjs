@@ -1,5 +1,6 @@
 import express from 'express';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db.mjs';
 
@@ -10,6 +11,13 @@ connectDB();
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(cors({
+  origin: ["https://fintrack-green.vercel.app", "http://localhost:3000"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 import userRoutes from './routes/userRoutes.mjs'
 import txnRoutes from './routes/txnRoutes.mjs'
