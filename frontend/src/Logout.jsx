@@ -15,9 +15,12 @@ const LogoutButton = () => {
       className="p-button-outlined p-button-secondary"
       onClick={async () => {
         try {
-          const response = await fetch("https://finance-tracker-eqoj.onrender.com/logout", {
-            method: "GET",
-          });
+          const response = await fetch(
+            "https://finance-tracker-production-348a.up.railway.app/logout",
+            {
+              method: "GET",
+            }
+          );
           if (!response.ok) {
             toast.current.show({severity:'error', summary: 'Error !', detail:"Logout failed", life: 1000});
           }

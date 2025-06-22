@@ -14,11 +14,14 @@ const Login = () => {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://finance-tracker-eqoj.onrender.com/user/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await fetch(
+        "https://finance-tracker-production-348a.up.railway.app/user/login",
+        {
+          method: "POST",
+          body: JSON.stringify({ email, password }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const data = await res.json();
       if (data.err) {
         toast.current.show({severity:'error', summary: 'Error !', detail:data.err, life: 1000});

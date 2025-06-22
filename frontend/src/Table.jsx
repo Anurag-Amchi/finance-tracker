@@ -165,12 +165,15 @@ export default function Table(props) {
         const filteredTransactions = transactions.filter((transaction) => transaction.title !== rowData.title);
         setTransactions(filteredTransactions);
         try {
-            const response = await fetch(`https://finance-tracker-eqoj.onrender.com/txns/${rowData._id}`, {
-              method: "DELETE",
-              headers: {
-                "Content-Type": "application/json"
-              },
-            });
+            const response = await fetch(
+              `https://finance-tracker-production-348a.up.railway.app/txns/${rowData._id}`,
+              {
+                method: "DELETE",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
             if (!response.ok) {
                 toast.current.show({severity:'error', summary: "Error !", detail:"Failed to delete transaction", life: 1000});
             } else{

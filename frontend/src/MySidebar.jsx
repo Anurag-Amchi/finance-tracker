@@ -19,11 +19,14 @@ const MySidebar = () => {
   const saveLimit = async () => {
     setSubmitted(true);
     if(val > 0){
-      const res = await fetch("https://finance-tracker-eqoj.onrender.com/user/setLimit", {
-        method: "PATCH",
-        body: JSON.stringify({limit : val}),
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await fetch(
+        "https://finance-tracker-production-348a.up.railway.app/user/setLimit",
+        {
+          method: "PATCH",
+          body: JSON.stringify({ limit: val }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const data = await res.json();
       if (data.err) {
         toast.current.show({severity:'error', summary: 'Error !', detail:data.err, life: 1000});

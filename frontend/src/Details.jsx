@@ -11,10 +11,13 @@ function Details() {
         setIsLoading(true);
         const loadInit = async () => {
           try {
-            const res = await fetch("https://finance-tracker-eqoj.onrender.com/txns", {
-              method: "GET",
-              headers: { "Content-Type": "application/json" },
-            });
+            const res = await fetch(
+              "https://finance-tracker-production-348a.up.railway.app/txns",
+              {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+              }
+            );
             const data = await res.json();
             if (data.err) {
                 toast.current.show({severity:'error', summary: "Error !", detail:data.err, life: 1000});
